@@ -190,7 +190,10 @@ class mb
         }
       default:
         if (isset($map[$webCode])) {
-          return '<img class="pictgram" src="/images/emoji/' . $webCode . '.gif" alt="" />';
+          return sprintf(
+            '<img class="pictgram" src="%s" alt="絵文字" />',
+            linkto("/images/emoji/{$webCode}.gif")
+          );
         } else {
           return "〓";
         }
